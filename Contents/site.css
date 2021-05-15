@@ -1,0 +1,95 @@
+﻿
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Text */
+.paragraph {
+    margin: 0 auto 0;
+    width: 600px;
+}
+
+    .paragraph div, .paragraph h2 {
+        text-align: center;
+    }
+
+    .paragraph p {
+        display: block;
+        white-space: pre-line;
+        text-align: justify;
+        line-height: 1.5em;
+    }
+
+/* Buttons */
+
+.icon-btn {
+    background-color: white;
+    border: none;
+}
+
+/* Card */
+.card {
+    box-shadow: 0px 1px 1px 1px #a7a7a7;
+    border-radius: 3px;
+}
+
+/* Divider */
+hr.divider {
+    border-top: 1px solid #bbbbbb;
+    margin-bottom: 0px;
+}
+
+/* Container */
+#container {
+    display: table;
+    margin: 20px auto 0;
+}
+
+/* Graph */
+
+.graph-container {
+    position: relative;
+}
+
+    .graph-container .controls {
+        position: absolute;
+        right: 0px;
+    }
+
+        .graph-container .controls button {
+            display: block;
+            margin: 3px;
+        }
+
+
+/* Time Controls */
+
+.time-controls {
+}
+
+    .time-controls > * {
+        display: inline-block;
+        padding: 3px;
+        vertical-align: middle;
+    }
+
+.hidden {
+    display: none;
+}
+
+.show-graph-btn {
+    margin-bottom: 10px;
+    border: 1px solid green;
+    border-radius: 3px;
+    background: none;
+    color: green;
+    transition: all linear 0.2s;
+}
+
+    .show-graph-btn:hover {
+        border: 1px double white;
+        border-radius: 3px;
+        background: green;
+        color: white;
+        transition: all linear 0.2s;
+    }

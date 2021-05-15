@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<head>
+    <title>Tunneling Through Rectangular Barrier</title>
+
+    <link rel="icon" href="icon.png" />
+
+    <!-- Style sheets -->
+    <!-- Math -->
+    <link href="Scripts/Libraries/mathscribe/jqmath-0.4.3.css" rel="stylesheet" />
+
+    <!-- Site -->
+    <link rel="stylesheet" href="Contents/site.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div class="paragraph">
+            <h2>Tunneling Through Rectangular Barrier</h2>
+            <h4>Rectangular Potential Barrier</h4>
+            <p>
+                A particle of mass $m$ and energy $E$ encounters a one-dimensional potential barrier $V(x)$:
+            </p>
+            <div>
+                $V(x)=\{\table ∞, x&lt;-a;0,-a&lt;x&lt;0;V_0,0&lt;x&lt;b;0,x>b$
+            </div>
+
+            <p>
+                The height of the potential barrier $V_0$ is greater than the energy of the particle $E$.
+                The initial wave function is $Ψ_{\text"in"}(x)$
+            </p>
+            <div>
+                $Ψ_{\text"in"}(x)=\{\table √{2/a}\sin(π{x+a}/a),-a&lt;x&lt;0;0, x&lt;-a\text", " x>0$
+            </div>
+            <p>
+                We define unitless quantities:
+            </p>
+            <div>
+                $\table α= {mV_0a^2}/ℏ^2, β=b/a, ε=E/V_0, τ={ℏt}/{2ma^2}$
+            </div>
+            <p>
+                In this simulation, $α=100$, $β=1/2$ and $ε=1/2$. $τ$ is displayed below the graph.
+                The particle passes through the barrier by quantum tunneling.
+            </p>
+            <h4>Survival Probability</h4>
+            <p>
+                The survival probability amplitude $C_{\text"in"}(t)$ is defined as:
+            </p>
+            <div>
+                $C_{\text"in"}(t)=∫↖ {∞}↙{-∞}dx⋅{Ψ^*}_{\text"in"}(x)ψ(x,t)$
+            </div>
+            <p>
+                The survival probability $|C_{\text"in"}(t)|^2$ approximates the probability of the particle staying in the initial state $Ψ_{\text"in"}(x)$ after time $t$.
+                If the parameters $α,β$ are chosen such that $αβ^2$ is sufficiently large, $|C_{\text"in"}(t)|^2$ can be approximated by exponential decay.
+            </p>
+        </div>
+
+        <div>
+            <button class="show-graph-btn" id="show-survival-probability">show survival probability</button>
+            <button class="show-graph-btn" id="show-simulation">show wave</button>
+
+            <div class="card">
+
+                <!-- Simulation -->
+                <div id="rectangular-barrier-simulation">
+                    <div class="graph-container">
+                        <div class="controls">
+                            <button class="scale-up icon-btn">
+                                <i class="material-icons">zoom_in</i>
+                            </button>
+                            <button class="scale-down icon-btn">
+                                <i class="material-icons">zoom_out</i>
+                            </button>
+
+                            <button class="shift-x-down icon-btn">
+                                <i class="material-icons">arrow_back</i>
+                            </button>
+                            <button class="shift-x-up icon-btn">
+                                <i class="material-icons">arrow_forward</i>
+                            </button>
+
+                            <button class="shift-y-up icon-btn">
+                                <i class="material-icons">arrow_upward</i>
+                            </button>
+                            <button class="shift-y-down icon-btn">
+                                <i class="material-icons">arrow_downward</i>
+                            </button>
+                        </div>
+
+                        <canvas class="graph-canvas" height="600" width="600"></canvas>
+                    </div>
+                </div>
+
+                <!-- Survival Probability -->
+                <div id="survival-probability">
+                    <div class="graph-container">
+                        <div class="controls">
+                            <button class="scale-up icon-btn">
+                                <i class="material-icons">zoom_in</i>
+                            </button>
+                            <button class="scale-down icon-btn">
+                                <i class="material-icons">zoom_out</i>
+                            </button>
+
+                            <button class="shift-x-down icon-btn">
+                                <i class="material-icons">arrow_back</i>
+                            </button>
+                            <button class="shift-x-up icon-btn">
+                                <i class="material-icons">arrow_forward</i>
+                            </button>
+
+                            <button class="shift-y-up icon-btn">
+                                <i class="material-icons">arrow_upward</i>
+                            </button>
+                            <button class="shift-y-down icon-btn">
+                                <i class="material-icons">arrow_downward</i>
+                            </button>
+                        </div>
+
+                        <canvas class="graph-canvas" height="600" width="600"></canvas>
+                    </div>
+                </div>
+
+                <!-- Survival Probability Log -->
+                <div id="survival-probability-log" hidden>
+                    <div class="graph-container">
+                        <div class="controls">
+                            <button class="scale-up icon-btn">
+                                <i class="material-icons">zoom_in</i>
+                            </button>
+                            <button class="scale-down icon-btn">
+                                <i class="material-icons">zoom_out</i>
+                            </button>
+
+                            <button class="shift-x-down icon-btn">
+                                <i class="material-icons">arrow_back</i>
+                            </button>
+                            <button class="shift-x-up icon-btn">
+                                <i class="material-icons">arrow_forward</i>
+                            </button>
+
+                            <button class="shift-y-up icon-btn">
+                                <i class="material-icons">arrow_upward</i>
+                            </button>
+                            <button class="shift-y-down icon-btn">
+                                <i class="material-icons">arrow_downward</i>
+                            </button>
+                        </div>
+
+                        <canvas class="graph-canvas" height="600" width="600"></canvas>
+                    </div>
+                </div>
+
+
+
+                <hr class="divider" />
+                <div class="time-controls">
+                    <button class="restart icon-btn">
+                        <i class="material-icons">replay</i>
+                    </button>
+                    <button class="back-step icon-btn">
+                        <i class="material-icons">fast_rewind</i>
+                    </button>
+                    <button class="play icon-btn">
+                        <i class="material-icons">play_arrow</i>
+                    </button>
+                    <button class="pause icon-btn">
+                        <i class="material-icons">pause</i>
+                    </button>
+                    <button class="foward-step icon-btn">
+                        <i class="material-icons">fast_forward</i>
+                    </button>
+                    <span>
+                        <span>τ=</span><span id="tau-value"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tau-display">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Math -->
+    <script src="Scripts/Libraries/mathscribe/jquery-1.4.3.min.js"></script>
+    <script src="Scripts/Libraries/mathscribe/jqmath-etc-0.4.6.min.js"></script>
+
+    <!-- Libraries -->
+    <script src="Scripts/Libraries/Utilities/superscriptUnicode.js"></script>
+    <script src="Scripts/Libraries/Utilities/stringHelper.js"></script>
+    <script src="Scripts/Libraries/Utilities/timer.js"></script>
+
+    <script src="Scripts/Libraries/Canvas/canvas.js"></script>
+
+    <script src="Scripts/Libraries/CoordinateSystem/coordinateSystem.js"></script>
+    <script src="Scripts/Libraries/CoordinateSystem/timeDependentCoordinateSystem.js"></script>
+
+    <script src="Scripts/Libraries/Components/coordinateSystem.js"></script>
+    <script src="Scripts/Libraries/Components/timeDependentCoordinateSystem.js"></script>
+
+    <script src="Scripts/Libraries/Math/cartesianCoordinates.js"></script>
+    <script src="Scripts/Libraries/Math/integration.js"></script>
+
+    <script src="Scripts/Libraries/Physics/schrodinger.js"></script>
+    <script src="Scripts/Libraries/Physics/survivalProbability.js"></script>
+
+    <!-- Site -->
+    <script src="Scripts/Pages/indexPageService.js"></script>
+
+    <script src="Scripts/Experiments/rectangularBarrierExperiment.js"></script>
+
+    <script src="Scripts/Graphs/rectangularBarrierSimulation.js"></script>
+    <script src="Scripts/Graphs/rectangularBarrierSurvivalProbability.js"></script>
+    <script src="Scripts/Graphs/rectangularBarrierSurvivalProbabilityLog.js"></script>
+
+    <script src="Scripts/waveFunctionData.js"></script>
+    <script src="Scripts/site.js"></script>
+</body>
+</html>
